@@ -10,19 +10,17 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/supabase'],
 
   supabase: {
+    // 前台网站所有页面都是公开的，不需要认证
     redirectOptions: {
-      login: '/login',
-      callback: '/confirm',
+      login: '/login',      // 登录页面（虽然前台不需要）
+      callback: '/confirm', // 回调页面
       exclude: [
-        // 前台公开页面 - 不需要认证
         '/',
         '/news',
-        '/news/**',
+        '/news/*',
         '/contact',
-        '/berry-medical-web/',
-        '/berry-medical-web/news',
-        '/berry-medical-web/news/**',
-        '/berry-medical-web/contact'
+        '/company',
+        '/company/*'
       ]
     },
     types: '~/types/supabase-database'
