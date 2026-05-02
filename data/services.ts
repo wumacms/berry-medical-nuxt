@@ -1,6 +1,7 @@
 /**
  * 服务数据
  * 从 blocks.json 读取 (type = services, service-detail)
+ * 支持按 pageId 过滤
  */
 
 import blocksData from './generated/blocks.json'
@@ -16,9 +17,22 @@ export interface ServiceItem {
   features: { icon: string; text: string }[]
 }
 
-// 查找 blocks.json 中的 services 区块
-const servicesBlock = (blocksData as any[]).find((b: any) => b.type === 'services')
-const serviceDetailBlocks = (blocksData as any[]).filter((b: any) => b.type === 'service-detail')
+// 首页 ID (默认值)
+export const HOME_PAGE_ID = '760dcc34-df32-4473-96bd-fa021c401837'
+
+// 按 pageId 获取 services 区块
+export const getServicesBlock = (pageId: string) => {
+  return (blocksData as any[]).find((b: any) => b.pageId === pageId && b.type === 'services')
+}
+
+// 按 pageId 获取 service-detail 区块
+export const getServiceDetailBlocks = (pageId: string) => {
+  return (blocksData as any[]).filter((b: any) => b.pageId === pageId && b.type === 'service-detail')
+}
+
+// 兼容旧代码 - 默认使用首页数据
+const servicesBlock = getServicesBlock(HOME_PAGE_ID)
+const serviceDetailBlocks = getServiceDetailBlocks(HOME_PAGE_ID)
 
 // 服务概览数据 - 从 services 区块的 cards 提取
 export const servicesOverview = (servicesBlock?.config?.cards || []).map((card: any) => ({

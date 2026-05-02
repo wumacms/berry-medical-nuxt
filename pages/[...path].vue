@@ -22,7 +22,7 @@
         <!-- 服务概览区块 -->
         <ServicesSection
           v-else-if="block.type === 'services'"
-          :data="block.config"
+          :page-id="block.pageId"
         />
 
         <!-- 服务详情区块 -->

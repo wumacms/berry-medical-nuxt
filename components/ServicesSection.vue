@@ -36,6 +36,14 @@
 </template>
 
 <script setup lang="ts">
-const { overviewList } = useServices()
+interface Props {
+  pageId?: string  // 可选，指定页面 ID
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  pageId: ''
+})
+
+const { overviewList } = useServices(props.pageId || undefined)
 const { services } = useSiteConfig()
 </script>
