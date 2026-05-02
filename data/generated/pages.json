@@ -1,23 +1,10 @@
 [
   {
-    "id": "7c77dee6-4cf5-4408-9a95-cf67ced05f48",
-    "name": "公司简介",
-    "path": "/company",
-    "description": "公司简介",
-    "navSortOrder": 0,
-    "isNavVisible": true,
-    "seo": {
-      "title": "公司简介标题测试",
-      "keywords": "公司简介",
-      "description": "公司描述测试"
-    }
-  },
-  {
     "id": "760dcc34-df32-4473-96bd-fa021c401837",
     "name": "首页",
     "path": "/",
     "description": "贝瑞医疗首页",
-    "navSortOrder": 1,
+    "navSortOrder": 0,
     "isNavVisible": true,
     "seo": {}
   },
@@ -26,9 +13,22 @@
     "name": "新闻资讯",
     "path": "/news",
     "description": "新闻资讯页",
-    "navSortOrder": 2,
+    "navSortOrder": 1,
     "isNavVisible": true,
     "seo": {}
+  },
+  {
+    "id": "7c77dee6-4cf5-4408-9a95-cf67ced05f48",
+    "name": "公司简介",
+    "path": "/company",
+    "description": "公司简介",
+    "navSortOrder": 2,
+    "isNavVisible": true,
+    "seo": {
+      "title": "公司简介标题测试",
+      "keywords": "公司简介",
+      "description": "公司描述测试"
+    }
   },
   {
     "id": "7e8d4f2a-3c5b-4e6f-8a9b-0c1d2e3f4a5b",

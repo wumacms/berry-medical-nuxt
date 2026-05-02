@@ -58,6 +58,9 @@ export interface Database {
           name: string
           path: string | null
           description: string | null
+          nav_sort_order: number | null
+          is_nav_visible: boolean | null
+          is_footer_visible: boolean | null
           seo: Json | null
           created_at: string
           updated_at: string | null
@@ -68,6 +71,9 @@ export interface Database {
           name: string
           path?: string | null
           description?: string | null
+          nav_sort_order?: number | null
+          is_nav_visible?: boolean | null
+          is_footer_visible?: boolean | null
           seo?: Json | null
           created_at?: string
           updated_at?: string | null
@@ -78,6 +84,9 @@ export interface Database {
           name?: string
           path?: string | null
           description?: string | null
+          nav_sort_order?: number | null
+          is_nav_visible?: boolean | null
+          is_footer_visible?: boolean | null
           seo?: Json | null
           created_at?: string
           updated_at?: string | null
