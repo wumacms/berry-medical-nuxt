@@ -12,8 +12,8 @@ export default defineNuxtConfig({
   supabase: {
     // 前台网站所有页面都是公开的，不需要认证
     redirectOptions: {
-      login: '/login',      // 登录页面（虽然前台不需要）
-      callback: '/confirm', // 回调页面
+      login: '/login',
+      callback: '/confirm',
       exclude: [
         '/',
         '/news',
@@ -23,7 +23,11 @@ export default defineNuxtConfig({
         '/company/*'
       ]
     },
-    types: '~/types/supabase-database'
+    types: '~/types/supabase-database',
+    // 禁用 SSR cookies 以避免 hydration 问题
+    ssr: false,
+    url: process.env.NUXT_PUBLIC_SUPABASE_URL,
+    key: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY
   },
 
   runtimeConfig: {
