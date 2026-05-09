@@ -82,7 +82,6 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'tencent',
     prerender: {
       failOnError: false,
       routes: ['/', '/news', '/news/1', '/news/2', '/news/3', '/contact']
