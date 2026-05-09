@@ -26,8 +26,8 @@ export default defineNuxtConfig({
     types: '~/types/supabase-database',
     // 禁用 SSR cookies 以避免 hydration 问题
     ssr: false,
-    url: process.env.NUXT_PUBLIC_SUPABASE_URL,
-    key: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY
+    url: process.env.NUXT_PUBLIC_SUPABASE_URL || '',
+    key: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY || ''
   },
 
   runtimeConfig: {
@@ -82,6 +82,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    preset: 'tencent',
     prerender: {
       failOnError: false,
       routes: ['/', '/news', '/news/1', '/news/2', '/news/3', '/contact']
