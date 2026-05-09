@@ -39,7 +39,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: '/berry-medical-web/',
+    baseURL: process.env.NUXT_PUBLIC_BASE_URL || '/',
     head: {
       title: '贝瑞医疗 | 核医学场所建设一站式服务商',
       htmlAttrs: {
@@ -57,7 +57,7 @@ export default defineNuxtConfig({
         { name: 'format-detection', content: 'telephone=no' }
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: './favicon.svg' },
+        { rel: 'icon', type: 'image/svg+xml', href: 'favicon.svg' },
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' }
       ]
     }
