@@ -1,14 +1,17 @@
 {
-  "name": "berry-medical-nuxt",
+  "name": "berry-medical",
   "type": "module",
   "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "build:gh-pages": "nuxt build --preset github_pages",
+    "deploy": "sh deploy.sh",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "packageManager": "pnpm@9.15.4",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.3.1",
     "@tailwindcss/vite": "^4.3.3",
