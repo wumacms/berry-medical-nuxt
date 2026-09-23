@@ -53,7 +53,7 @@ else
 fi
 
 echo -e "\n${GREEN}==> 正在推送分支 [${CURRENT_BRANCH}] 到远程仓库 [${TARGET_REMOTE}]...${NC}"
-git push "$TARGET_REMOTE" "$CURRENT_BRANCH"
+git push -u "$TARGET_REMOTE" "$CURRENT_BRANCH"
 
 echo -e "\n${GREEN}===============================================${NC}"
 echo -e "${GREEN}✓ 代码已成功推送到远程仓库！${NC}"
