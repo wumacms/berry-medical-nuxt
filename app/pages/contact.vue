@@ -58,26 +58,17 @@ const faqs: FaqItem[] = [
 <template>
   <div>
     <!-- 首屏 Hero -->
-    <PageHero
-      tag="CONTACT US"
-      tag-icon="fa-solid fa-headset"
-      title="期待与您"
-      highlight="携手“核”作"
+    <PageHero tag="CONTACT US" tag-icon="fa-solid fa-headset" title="期待与您" highlight="携手“核”作"
       description="贝瑞医疗期待与您携手“核”作，共筑医疗健康新蓝图！欢迎通过以下方式联系我们，获取专属核医学场所建设方案。"
       image-url="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1470&auto=format&fit=crop"
-      image-alt="贝瑞医疗环境"
-    >
+      image-alt="贝瑞医疗环境">
       <template #actions>
-        <a
-          :href="`tel:${companyContact.phone}`"
-          class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm"
-        >
+        <a :href="`tel:${companyContact.phone}`"
+          class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm">
           <i class="fa-solid fa-phone"></i> {{ companyContact.phone }}
         </a>
-        <a
-          :href="`mailto:${companyContact.email}`"
-          class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm"
-        >
+        <a :href="`mailto:${companyContact.email}`"
+          class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm">
           <i class="fa-regular fa-envelope text-primary"></i> 发送邮件
         </a>
       </template>
@@ -87,24 +78,16 @@ const faqs: FaqItem[] = [
     <section id="info" class="py-16 lg:py-20 bg-light scroll-mt-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div
-            v-for="card in contactCards"
-            :key="card.title"
-            class="bg-white rounded-3xl p-8 text-center shadow-xs border border-gray-100 hover:shadow-xl transition-all duration-300"
-          >
+          <div v-for="card in contactCards" :key="card.title"
+            class="bg-white rounded-3xl p-8 text-center shadow-xs border border-gray-100 hover:shadow-xl transition-all duration-300">
             <div
-              class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-6"
-            >
+              class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-6">
               <i :class="card.icon"></i>
             </div>
             <h3 class="text-lg font-bold text-dark mb-2">
               {{ card.title }}
             </h3>
-            <p
-              v-for="(line, idx) in card.lines"
-              :key="idx"
-              class="text-sm text-dark/70 leading-relaxed"
-            >
+            <p v-for="(line, idx) in card.lines" :key="idx" class="text-sm text-dark/70 leading-relaxed">
               {{ line }}
             </p>
           </div>
@@ -130,8 +113,7 @@ const faqs: FaqItem[] = [
             <div class="space-y-4 pt-4">
               <div class="flex items-start gap-4">
                 <div
-                  class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0"
-                >
+                  class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
                   1
                 </div>
                 <div>
@@ -141,8 +123,7 @@ const faqs: FaqItem[] = [
               </div>
               <div class="flex items-start gap-4">
                 <div
-                  class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0"
-                >
+                  class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
                   2
                 </div>
                 <div>
@@ -152,8 +133,7 @@ const faqs: FaqItem[] = [
               </div>
               <div class="flex items-start gap-4">
                 <div
-                  class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0"
-                >
+                  class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
                   3
                 </div>
                 <div>
@@ -191,16 +171,13 @@ const faqs: FaqItem[] = [
 
           <!-- 地图展示卡片 -->
           <div class="rounded-3xl overflow-hidden shadow-xl aspect-4/3 bg-white relative border border-gray-100">
-            <img
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1470&auto=format&fit=crop"
-              alt="公司位置地图"
-              class="w-full h-full object-cover"
-            >
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1470&auto=format&fit=crop"
+              alt="公司位置地图" class="w-full h-full object-cover">
             <div class="absolute inset-0 flex items-center justify-center">
-              <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl px-6 py-4 text-center border border-gray-100">
+              <div
+                class="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl px-6 py-4 text-center border border-gray-100">
                 <div
-                  class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center text-lg mx-auto mb-2"
-                >
+                  class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center text-lg mx-auto mb-2">
                   <i class="fa-solid fa-location-dot"></i>
                 </div>
                 <p class="text-sm font-bold text-dark">贝瑞医疗总部</p>
@@ -215,11 +192,7 @@ const faqs: FaqItem[] = [
     <!-- 常见问题 FAQ -->
     <section id="faq" class="py-20 lg:py-28 bg-white scroll-mt-24">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          tag="常见问题"
-          title="您可能想了解的合作疑问"
-          description="我们梳理了医疗机构在前期核医学立项与场所建设中的常见高频咨询。"
-        />
+        <SectionHeader tag="常见问题" title="您可能想了解的合作疑问" description="我们梳理了医疗机构在前期核医学立项与场所建设中的常见高频咨询。" />
 
         <FaqAccordion :items="faqs" />
       </div>

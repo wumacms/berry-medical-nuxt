@@ -4,9 +4,16 @@ import SectionHeader from "~/components/common/SectionHeader.vue";
 import CtaBanner from "~/components/common/CtaBanner.vue";
 import { serviceChapters } from "~/data/services";
 
+const { setCanonical, SITE_URL } = useJsonLd();
+setCanonical("/services");
+
 useSeoMeta({
   title: "服务内容 - 贝瑞医疗 · 核医学场所建设整体解决方案",
-  description: "从设计到施工，从设备到运维，贝瑞医疗提供设计篇、施工篇、设备篇核医学场所建设全生命周期一站式闭环服务。",
+  description: "从设计到施工，从设备到运维，贝瑞医疗提供设计篇、施工篇、设备篇核医学场所建设全生命周期一站式闭环服务，助力医疗机构合规高效建设。",
+  ogTitle: "服务内容 - 贝瑞医疗 · 核医学场所建设整体解决方案",
+  ogDescription: "涵盖工艺流程规划、辐射屏蔽测算、衰变池施工、智能化设备集成及环评药监验收的全流程一站式服务。",
+  ogImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1470&auto=format&fit=crop",
+  ogUrl: `${SITE_URL}/services`,
 });
 
 const layoutPrinciples = [
@@ -21,32 +28,21 @@ const layoutPrinciples = [
 <template>
   <div>
     <!-- 首屏 Hero -->
-    <PageHero
-      tag="SERVICE CONTENT"
-      tag-icon="fa-solid fa-layer-group"
-      title="核医学场所建设"
-      highlight="整体解决方案"
+    <PageHero tag="SERVICE CONTENT" tag-icon="fa-solid fa-layer-group" title="核医学场所建设" highlight="整体解决方案"
       description="从设计到施工，从设备到运维，贝瑞医疗提供核医学场所建设一站式服务，覆盖全生命周期需求。"
       image-url="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1470&auto=format&fit=crop"
-      image-alt="核医学场所建设服务"
-    >
+      image-alt="核医学场所建设服务">
       <template #actions>
-        <a
-          href="#design"
-          class="bg-primary text-white font-semibold px-5 py-2.5 rounded-full shadow-md shadow-primary/20 hover:bg-primary/90 transition text-sm flex items-center gap-2"
-        >
+        <a href="#design"
+          class="bg-primary text-white font-semibold px-5 py-2.5 rounded-full shadow-md shadow-primary/20 hover:bg-primary/90 transition text-sm flex items-center gap-2">
           <i class="fa-solid fa-drafting-compass text-xs"></i> 设计篇
         </a>
-        <a
-          href="#construction"
-          class="bg-white text-dark font-semibold px-5 py-2.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition text-sm flex items-center gap-2"
-        >
+        <a href="#construction"
+          class="bg-white text-dark font-semibold px-5 py-2.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition text-sm flex items-center gap-2">
           <i class="fa-solid fa-helmet-safety text-xs"></i> 施工篇
         </a>
-        <a
-          href="#equipment"
-          class="bg-white text-dark font-semibold px-5 py-2.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition text-sm flex items-center gap-2"
-        >
+        <a href="#equipment"
+          class="bg-white text-dark font-semibold px-5 py-2.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition text-sm flex items-center gap-2">
           <i class="fa-solid fa-microchip text-xs"></i> 设备篇
         </a>
       </template>
@@ -55,22 +51,14 @@ const layoutPrinciples = [
     <!-- 服务总览三大篇章 -->
     <section class="py-20 lg:py-24 bg-light">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          tag="服务总览"
-          title="三大专业篇章"
-          description="设计、施工、设备三大篇章，构建核医学场所建设完整交付矩阵。"
-        />
+        <SectionHeader tag="服务总览" title="三大专业篇章" description="设计、施工、设备三大篇章，构建核医学场所建设完整交付矩阵。" />
 
         <div class="grid md:grid-cols-3 gap-6">
-          <div
-            v-for="chap in serviceChapters"
-            :key="chap.id"
-            class="bg-white rounded-3xl p-8 hover:shadow-xl transition duration-300 border border-transparent hover:border-primary/20 group flex flex-col justify-between"
-          >
+          <div v-for="chap in serviceChapters" :key="chap.id"
+            class="bg-white rounded-3xl p-8 hover:shadow-xl transition duration-300 border border-transparent hover:border-primary/20 group flex flex-col justify-between">
             <div>
               <div
-                class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300"
-              >
+                class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
                 <i :class="chap.icon"></i>
               </div>
               <span class="text-xs font-bold text-primary tracking-wider">{{ chap.code }}</span>
@@ -81,10 +69,8 @@ const layoutPrinciples = [
                 {{ chap.description }}
               </p>
             </div>
-            <a
-              :href="`#${chap.id}`"
-              class="text-primary text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
-            >
+            <a :href="`#${chap.id}`"
+              class="text-primary text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
               深入了解{{ chap.title }} <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
           </div>
@@ -97,8 +83,7 @@ const layoutPrinciples = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center gap-4 mb-12">
           <div
-            class="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center text-2xl shadow-lg shadow-primary/30"
-          >
+            class="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center text-2xl shadow-lg shadow-primary/30">
             <i class="fa-solid fa-drafting-compass"></i>
           </div>
           <div>
@@ -135,14 +120,9 @@ const layoutPrinciples = [
               <i class="fa-solid fa-list-check text-primary text-sm"></i> 平面布局五大核心原则
             </h3>
             <ol class="space-y-4">
-              <li
-                v-for="(p, i) in layoutPrinciples"
-                :key="i"
-                class="flex items-start gap-4"
-              >
+              <li v-for="(p, i) in layoutPrinciples" :key="i" class="flex items-start gap-4">
                 <span
-                  class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
-                >
+                  class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                   {{ i + 1 }}
                 </span>
                 <p class="text-sm text-dark/70 leading-relaxed">
@@ -156,22 +136,16 @@ const layoutPrinciples = [
         <!-- 平面案例展示 -->
         <div class="grid md:grid-cols-2 gap-6">
           <div class="rounded-3xl overflow-hidden shadow-lg bg-light border border-gray-100">
-            <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1470&auto=format&fit=crop"
-              alt="核医学场所整体分区布局"
-              class="w-full h-64 object-cover"
-            >
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1470&auto=format&fit=crop"
+              alt="核医学场所整体分区布局" class="w-full h-64 object-cover">
             <div class="p-5">
               <span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">方案设计</span>
               <p class="text-base font-bold text-dark mt-3">核医学场所整体控制区/监督区布局设计</p>
             </div>
           </div>
           <div class="rounded-3xl overflow-hidden shadow-lg bg-light border border-gray-100">
-            <img
-              src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1470&auto=format&fit=crop"
-              alt="放射性药物制备区功能分区"
-              class="w-full h-64 object-cover"
-            >
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1470&auto=format&fit=crop"
+              alt="放射性药物制备区功能分区" class="w-full h-64 object-cover">
             <div class="p-5">
               <span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">净化设计</span>
               <p class="text-base font-bold text-dark mt-3">放射性药物制备区 C+A 级净化布局方案</p>
@@ -186,8 +160,7 @@ const layoutPrinciples = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center gap-4 mb-12">
           <div
-            class="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center text-2xl shadow-lg shadow-primary/30"
-          >
+            class="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center text-2xl shadow-lg shadow-primary/30">
             <i class="fa-solid fa-helmet-safety"></i>
           </div>
           <div>
@@ -197,14 +170,10 @@ const layoutPrinciples = [
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div
-            v-for="feat in serviceChapters[1]?.features"
-            :key="feat.title"
-            class="bg-white rounded-3xl p-8 shadow-xs border border-gray-100 hover:shadow-xl transition-all duration-300 group"
-          >
+          <div v-for="feat in serviceChapters[1]?.features" :key="feat.title"
+            class="bg-white rounded-3xl p-8 shadow-xs border border-gray-100 hover:shadow-xl transition-all duration-300 group">
             <div
-              class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300"
-            >
+              class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <i :class="feat.icon"></i>
             </div>
             <h3 class="text-lg font-bold text-dark mb-2">
@@ -223,8 +192,7 @@ const layoutPrinciples = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center gap-4 mb-12">
           <div
-            class="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center text-2xl shadow-lg shadow-primary/30"
-          >
+            class="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center text-2xl shadow-lg shadow-primary/30">
             <i class="fa-solid fa-microchip"></i>
           </div>
           <div>
@@ -234,14 +202,10 @@ const layoutPrinciples = [
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <div
-            v-for="feat in serviceChapters[2]?.features"
-            :key="feat.title"
-            class="bg-light rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
-          >
+          <div v-for="feat in serviceChapters[2]?.features" :key="feat.title"
+            class="bg-light rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 group">
             <div
-              class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300"
-            >
+              class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <i :class="feat.icon"></i>
             </div>
             <h3 class="text-lg font-bold text-dark mb-2">
@@ -264,10 +228,8 @@ const layoutPrinciples = [
               </p>
             </div>
             <div class="flex flex-wrap lg:justify-end gap-4">
-              <NuxtLink
-                to="/contact"
-                class="bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition text-sm flex items-center gap-2"
-              >
+              <NuxtLink to="/contact"
+                class="bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition text-sm flex items-center gap-2">
                 <i class="fa-solid fa-headset"></i> 咨询运维服务
               </NuxtLink>
             </div>

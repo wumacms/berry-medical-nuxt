@@ -1,2 +1,4 @@
 User-Agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://www.berrymedical.com.cn/sitemap.xml

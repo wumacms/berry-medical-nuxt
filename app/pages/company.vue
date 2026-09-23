@@ -13,26 +13,17 @@ useSeoMeta({
 <template>
   <div>
     <!-- 首屏 Hero -->
-    <PageHero
-      tag="COMPANY PROFILE"
-      tag-icon="fa-solid fa-building"
-      title="专注核医学场所建设"
-      highlight="全生命周期闭环服务"
+    <PageHero tag="COMPANY PROFILE" tag-icon="fa-solid fa-building" title="专注核医学场所建设" highlight="全生命周期闭环服务"
       description="贝瑞医疗科技（郑州）有限公司专注核医学场所建设一站式服务，以专业技术与深厚行业经验，为客户提供从规划到运维的全生命周期交钥匙方案。"
       image-url="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1470&auto=format&fit=crop"
-      image-alt="贝瑞医疗办公环境"
-    >
+      image-alt="贝瑞医疗办公环境">
       <template #actions>
-        <a
-          href="#business"
-          class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm"
-        >
+        <a href="#business"
+          class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm">
           了解业务范围 <i class="fa-solid fa-arrow-down text-xs"></i>
         </a>
-        <NuxtLink
-          to="/contact"
-          class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm"
-        >
+        <NuxtLink to="/contact"
+          class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm">
           <i class="fa-regular fa-circle-question text-primary"></i> 咨询合作
         </NuxtLink>
       </template>
@@ -77,11 +68,8 @@ useSeoMeta({
 
           <!-- 右侧：数据统计面板 -->
           <div class="grid grid-cols-2 gap-6">
-            <div
-              v-for="stat in companyStats"
-              :key="stat.label"
-              class="bg-white rounded-3xl p-8 shadow-xs text-center border border-gray-100"
-            >
+            <div v-for="stat in companyStats" :key="stat.label"
+              class="bg-white rounded-3xl p-8 shadow-xs text-center border border-gray-100">
               <span class="block text-4xl lg:text-5xl font-bold text-primary">{{ stat.number }}</span>
               <span class="text-xs text-dark/60 tracking-wide mt-2 block font-medium">{{ stat.label }}</span>
             </div>
@@ -93,21 +81,13 @@ useSeoMeta({
     <!-- 业务范围全景 -->
     <section id="business" class="py-20 lg:py-28 bg-white scroll-mt-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          tag="业务范围"
-          title="覆盖核医学全生命周期需求"
-          description="从核医学场所初始选址评估，到后期不间断的专业运行维保，满足多元化高难度建设需求。"
-        />
+        <SectionHeader tag="业务范围" title="覆盖核医学全生命周期需求" description="从核医学场所初始选址评估，到后期不间断的专业运行维保，满足多元化高难度建设需求。" />
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            v-for="item in companyBusinessScope"
-            :key="item.title"
-            class="bg-light rounded-3xl p-8 hover:shadow-xl transition duration-300 border border-transparent hover:border-primary/20 group"
-          >
+          <div v-for="item in companyBusinessScope" :key="item.title"
+            class="bg-light rounded-3xl p-8 hover:shadow-xl transition duration-300 border border-transparent hover:border-primary/20 group">
             <div
-              class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300"
-            >
+              class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
               <i :class="item.icon"></i>
             </div>
             <h3 class="text-xl font-bold text-dark mb-3">
@@ -124,21 +104,13 @@ useSeoMeta({
     <!-- 企业文化与核心价值观 -->
     <section class="py-20 lg:py-28 bg-light">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          tag="企业文化"
-          title="核心价值观与理念"
-          description="恪守敬畏之心，以安全为基石，以专业立足，以创新引领核医学基础设施建设未来。"
-        />
+        <SectionHeader tag="企业文化" title="核心价值观与理念" description="恪守敬畏之心，以安全为基石，以专业立足，以创新引领核医学基础设施建设未来。" />
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div
-            v-for="val in corporateValues"
-            :key="val.title"
-            class="bg-white rounded-3xl p-8 shadow-xs border border-gray-100 hover:shadow-xl transition-all duration-300 text-center group"
-          >
+          <div v-for="val in corporateValues" :key="val.title"
+            class="bg-white rounded-3xl p-8 shadow-xs border border-gray-100 hover:shadow-xl transition-all duration-300 text-center group">
             <div
-              class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300"
-            >
+              class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <i :class="val.icon"></i>
             </div>
             <h3 class="text-2xl font-bold text-dark mb-1">
@@ -156,9 +128,6 @@ useSeoMeta({
     </section>
 
     <!-- 底部行动号召 -->
-    <CtaBanner
-      title="了解贝瑞医疗更多定制解决方案"
-      subtitle="专业工程团队提供免费现场勘测与前期概念方案咨询支持。"
-    />
+    <CtaBanner title="了解贝瑞医疗更多定制解决方案" subtitle="专业工程团队提供免费现场勘测与前期概念方案咨询支持。" />
   </div>
 </template>

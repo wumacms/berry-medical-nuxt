@@ -56,26 +56,17 @@ const therapeuticIsotopes = ["Lu-177", "Ac-225", "Y-90", "I-131"];
 <template>
   <div>
     <!-- 首屏 Hero -->
-    <PageHero
-      tag="INDUSTRY BACKGROUND"
-      tag-icon="fa-solid fa-chart-line"
-      title="核医学迎来"
-      highlight="精准医疗新时代"
+    <PageHero tag="INDUSTRY BACKGROUND" tag-icon="fa-solid fa-chart-line" title="核医学迎来" highlight="精准医疗新时代"
       description="全球健康挑战日益凸显，癌症与神经退行性疾病高发。核医学凭借在重大疾病诊疗中的独特优势，成为精准医疗领域的核心力量。"
       image-url="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1470&auto=format&fit=crop"
-      image-alt="核医学影像设备"
-    >
+      image-alt="核医学影像设备">
       <template #actions>
-        <a
-          href="#challenges"
-          class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm"
-        >
+        <a href="#challenges"
+          class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm">
           了解行业挑战 <i class="fa-solid fa-arrow-down text-xs"></i>
         </a>
-        <NuxtLink
-          to="/contact"
-          class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm"
-        >
+        <NuxtLink to="/contact"
+          class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm">
           <i class="fa-regular fa-circle-question text-primary"></i> 咨询解决方案
         </NuxtLink>
       </template>
@@ -84,23 +75,15 @@ const therapeuticIsotopes = ["Lu-177", "Ac-225", "Y-90", "I-131"];
     <!-- 行业挑战区块 -->
     <section id="challenges" class="py-20 lg:py-28 bg-white scroll-mt-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          tag="行业背景"
-          title="全球健康挑战与核医学价值"
-          description="核医学在疾病早期诊断、精准分期、疗效评估及靶向治疗全流程中，展现出无可替代的临床价值。"
-        />
+        <SectionHeader tag="行业背景" title="全球健康挑战与核医学价值" description="核医学在疾病早期诊断、精准分期、疗效评估及靶向治疗全流程中，展现出无可替代的临床价值。" />
 
         <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
           <!-- 挑战列表 -->
           <div class="space-y-6">
-            <div
-              v-for="item in challenges"
-              :key="item.title"
-              class="flex items-start gap-5 bg-light rounded-2xl p-6 border border-transparent hover:border-primary/20 transition-all duration-300"
-            >
+            <div v-for="item in challenges" :key="item.title"
+              class="flex items-start gap-5 bg-light rounded-2xl p-6 border border-transparent hover:border-primary/20 transition-all duration-300">
               <div
-                class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl shrink-0"
-              >
+                class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl shrink-0">
                 <i :class="item.icon"></i>
               </div>
               <div>
@@ -116,11 +99,8 @@ const therapeuticIsotopes = ["Lu-177", "Ac-225", "Y-90", "I-131"];
 
           <!-- 右侧插图 -->
           <div class="rounded-3xl overflow-hidden shadow-xl bg-white aspect-4/3 border border-gray-100">
-            <img
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop"
-              alt="核医学实验室"
-              class="w-full h-full object-cover"
-            >
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop"
+              alt="核医学实验室" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
@@ -129,21 +109,13 @@ const therapeuticIsotopes = ["Lu-177", "Ac-225", "Y-90", "I-131"];
     <!-- 技术红利驱动 -->
     <section class="py-20 lg:py-28 bg-light">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          tag="技术红利"
-          title="多重技术驱动核医学跨越式发展"
-          description="设备、药物、核素三大领域持续突破，不断拓展核医学应用边界与临床可及性。"
-        />
+        <SectionHeader tag="技术红利" title="多重技术驱动核医学跨越式发展" description="设备、药物、核素三大领域持续突破，不断拓展核医学应用边界与临床可及性。" />
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div
-            v-for="driver in drivers"
-            :key="driver.title"
-            class="bg-white rounded-3xl p-8 shadow-xs hover:shadow-xl transition duration-300 border border-transparent hover:border-primary/20 group"
-          >
+          <div v-for="driver in drivers" :key="driver.title"
+            class="bg-white rounded-3xl p-8 shadow-xs hover:shadow-xl transition duration-300 border border-transparent hover:border-primary/20 group">
             <div
-              class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300"
-            >
+              class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
               <i :class="driver.icon"></i>
             </div>
             <h3 class="text-lg font-bold text-dark mb-2">
@@ -184,30 +156,22 @@ const therapeuticIsotopes = ["Lu-177", "Ac-225", "Y-90", "I-131"];
                 靶向精准打击，实现高效治疗与低副作用兼具
               </li>
             </ul>
-            <NuxtLink
-              to="/services"
-              class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all pt-2"
-            >
+            <NuxtLink to="/services"
+              class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all pt-2">
               了解核医学场所建设服务 <i class="fa-solid fa-arrow-right text-xs"></i>
             </NuxtLink>
           </div>
           <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl aspect-4/3 bg-light">
-            <img
-              src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1470&auto=format&fit=crop"
-              alt="精准医疗"
-              class="w-full h-full object-cover"
-            >
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1470&auto=format&fit=crop"
+              alt="精准医疗" class="w-full h-full object-cover">
           </div>
         </div>
 
         <!-- 行 2 -->
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div class="rounded-3xl overflow-hidden shadow-xl aspect-4/3 bg-light order-1">
-            <img
-              src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=1470&auto=format&fit=crop"
-              alt="放射性药物研发"
-              class="w-full h-full object-cover"
-            >
+            <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=1470&auto=format&fit=crop"
+              alt="放射性药物研发" class="w-full h-full object-cover">
           </div>
           <div class="space-y-6 order-2">
             <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">药物研发成果丰硕</span>
@@ -239,11 +203,7 @@ const therapeuticIsotopes = ["Lu-177", "Ac-225", "Y-90", "I-131"];
     <!-- 核素分类 -->
     <section class="py-20 bg-light">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          tag="核素分类"
-          title="诊断与治疗核素"
-          description="不同能量特性的医用同位素对场所辐射屏蔽厚度与衰变池容积提出差异化严苛要求。"
-        />
+        <SectionHeader tag="核素分类" title="诊断与治疗核素" description="不同能量特性的医用同位素对场所辐射屏蔽厚度与衰变池容积提出差异化严苛要求。" />
 
         <div class="grid md:grid-cols-2 gap-8">
           <!-- 诊断用核素 -->
@@ -255,11 +215,8 @@ const therapeuticIsotopes = ["Lu-177", "Ac-225", "Y-90", "I-131"];
               <h3 class="text-xl font-bold text-dark">诊断用核素</h3>
             </div>
             <div class="flex flex-wrap gap-3">
-              <span
-                v-for="iso in diagnosticIsotopes"
-                :key="iso"
-                class="bg-light text-dark/80 font-medium text-sm px-4 py-2 rounded-full border border-gray-100"
-              >
+              <span v-for="iso in diagnosticIsotopes" :key="iso"
+                class="bg-light text-dark/80 font-medium text-sm px-4 py-2 rounded-full border border-gray-100">
                 {{ iso }}
               </span>
             </div>
@@ -274,11 +231,8 @@ const therapeuticIsotopes = ["Lu-177", "Ac-225", "Y-90", "I-131"];
               <h3 class="text-xl font-bold text-dark">治疗用核素</h3>
             </div>
             <div class="flex flex-wrap gap-3">
-              <span
-                v-for="iso in therapeuticIsotopes"
-                :key="iso"
-                class="bg-light text-dark/80 font-medium text-sm px-4 py-2 rounded-full border border-gray-100"
-              >
+              <span v-for="iso in therapeuticIsotopes" :key="iso"
+                class="bg-light text-dark/80 font-medium text-sm px-4 py-2 rounded-full border border-gray-100">
                 {{ iso }}
               </span>
             </div>
@@ -288,9 +242,6 @@ const therapeuticIsotopes = ["Lu-177", "Ac-225", "Y-90", "I-131"];
     </section>
 
     <!-- 底部 CTA -->
-    <CtaBanner
-      title="抢占核医学精准诊疗发展先机"
-      subtitle="贝瑞医疗协助各级医疗机构高质量规划并建成符合最高国家防护标准的现代化核医学场所。"
-    />
+    <CtaBanner title="抢占核医学精准诊疗发展先机" subtitle="贝瑞医疗协助各级医疗机构高质量规划并建成符合最高国家防护标准的现代化核医学场所。" />
   </div>
 </template>

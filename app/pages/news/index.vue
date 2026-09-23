@@ -31,19 +31,14 @@ const remainingNews = computed(() => {
   <div>
     <!-- 首屏 Hero（背景图沉浸式） -->
     <section class="relative overflow-hidden">
-      <img
-        src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop"
-        alt="新闻动态背景"
-        class="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
-      >
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop"
+        alt="新闻动态背景" class="absolute inset-0 w-full h-full object-cover" loading="eager">
       <div class="absolute inset-0 bg-black/60 backdrop-blur-2xs"></div>
 
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div class="max-w-3xl">
           <div
-            class="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-xs text-white text-xs font-semibold px-4 py-1.5 rounded-full tracking-wide border border-primary/30"
-          >
+            class="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-xs text-white text-xs font-semibold px-4 py-1.5 rounded-full tracking-wide border border-primary/30">
             <i class="fa-regular fa-newspaper text-[10px]"></i> NEWS & INSIGHTS
           </div>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight mt-5">
@@ -72,18 +67,12 @@ const remainingNews = computed(() => {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap items-center gap-2 sm:gap-3">
           <span class="text-xs font-semibold text-dark/50 tracking-wider mr-1">分类：</span>
-          <button
-            v-for="cat in newsCategories"
-            :key="cat.key"
-            type="button"
-            class="text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
-            :class="[
+          <button v-for="cat in newsCategories" :key="cat.key" type="button"
+            class="text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200 cursor-pointer" :class="[
               activeCategory === cat.key
                 ? 'bg-primary text-white shadow-xs'
                 : 'bg-white text-dark/70 border border-gray-200 hover:border-primary/40 hover:text-primary'
-            ]"
-            @click="activeCategory = cat.key"
-          >
+            ]" @click="activeCategory = cat.key">
             {{ cat.label }}
           </button>
         </div>
@@ -97,42 +86,30 @@ const remainingNews = computed(() => {
           <!-- 左侧：新闻列表 -->
           <div class="space-y-8">
             <!-- 头部置顶大卡片 -->
-            <NewsCard
-              v-if="featuredNews"
-              :item="featuredNews"
-              :featured="true"
-            />
+            <NewsCard v-if="featuredNews" :item="featuredNews" :featured="true" />
 
             <!-- 常规列表网格 -->
             <div class="grid sm:grid-cols-2 gap-6">
-              <NewsCard
-                v-for="item in remainingNews"
-                :key="item.id"
-                :item="item"
-              />
+              <NewsCard v-for="item in remainingNews" :key="item.id" :item="item" />
             </div>
 
             <!-- 分页 -->
             <div class="flex items-center justify-center gap-2 pt-8">
               <button
                 class="w-10 h-10 rounded-full bg-light border border-gray-200 flex items-center justify-center text-dark/50 hover:border-primary/40 hover:text-primary transition cursor-pointer"
-                disabled
-              >
+                disabled>
                 <i class="fa-solid fa-chevron-left text-xs"></i>
               </button>
               <button
-                class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold shadow-md shadow-primary/20 cursor-pointer"
-              >
+                class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold shadow-md shadow-primary/20 cursor-pointer">
                 1
               </button>
               <button
-                class="w-10 h-10 rounded-full bg-light border border-gray-200 flex items-center justify-center text-sm font-medium text-dark/60 hover:border-primary/40 hover:text-primary transition cursor-pointer"
-              >
+                class="w-10 h-10 rounded-full bg-light border border-gray-200 flex items-center justify-center text-sm font-medium text-dark/60 hover:border-primary/40 hover:text-primary transition cursor-pointer">
                 2
               </button>
               <button
-                class="w-10 h-10 rounded-full bg-light border border-gray-200 flex items-center justify-center text-dark/50 hover:border-primary/40 hover:text-primary transition cursor-pointer"
-              >
+                class="w-10 h-10 rounded-full bg-light border border-gray-200 flex items-center justify-center text-dark/50 hover:border-primary/40 hover:text-primary transition cursor-pointer">
                 <i class="fa-solid fa-chevron-right text-xs"></i>
               </button>
             </div>

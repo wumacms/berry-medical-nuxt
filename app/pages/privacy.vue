@@ -26,8 +26,7 @@ const menuItems = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
         <div class="max-w-3xl">
           <div
-            class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-4 py-1.5 rounded-full tracking-wide"
-          >
+            class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-4 py-1.5 rounded-full tracking-wide">
             <i class="fa-solid fa-shield-halved text-[10px]"></i> PRIVACY POLICY
           </div>
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark leading-tight tracking-tight mt-5">
@@ -67,7 +66,8 @@ const menuItems = [
               <ul class="space-y-3 text-sm text-dark/60">
                 <li class="flex items-start gap-3">
                   <i class="fa-solid fa-circle-check text-primary mt-1 text-xs"></i>
-                  <span><strong class="text-dark font-semibold">咨询信息</strong>：您在咨询表单中填写的姓名、单位名称、职务、联系电话、电子邮箱及拟建项目需求描述。</span>
+                  <span><strong
+                      class="text-dark font-semibold">咨询信息</strong>：您在咨询表单中填写的姓名、单位名称、职务、联系电话、电子邮箱及拟建项目需求描述。</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fa-solid fa-circle-check text-primary mt-1 text-xs"></i>
