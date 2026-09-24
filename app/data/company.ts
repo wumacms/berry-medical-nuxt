@@ -1,8 +1,28 @@
 export const companyStats = [
-  { number: "10+", label: "年行业深耕经验" },
-  { number: "30+", label: "核医学实施项目" },
-  { number: "100+", label: "方案技术咨询" },
-  { number: "10+", label: "许可证取证支持" },
+  {
+    icon: "fa-solid fa-business-time",
+    number: "10+",
+    label: "年行业深耕经验",
+    desc: "核心技术团队十年以上核医学工程积累",
+  },
+  {
+    icon: "fa-solid fa-hospital",
+    number: "30+",
+    label: "核医学实施项目",
+    desc: "服务全国三甲医院及肿瘤专科中心",
+  },
+  {
+    icon: "fa-solid fa-file-signature",
+    number: "100+",
+    label: "方案技术咨询",
+    desc: "高合规定制化前期规划与施工图指导",
+  },
+  {
+    icon: "fa-solid fa-certificate",
+    number: "10+",
+    label: "许可证取证支持",
+    desc: "放射诊疗、辐射安全等全流程高效过审",
+  },
 ];
 
 export const companyBusinessScope = [

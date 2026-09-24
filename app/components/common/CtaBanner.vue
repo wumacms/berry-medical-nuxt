@@ -31,7 +31,7 @@ withDefaults(defineProps<Props>(), {
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
           {{ title }}
         </h2>
-        <p class="text-white/80 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+        <p class="text-white/80 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
           {{ subtitle }}
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4 pt-4">

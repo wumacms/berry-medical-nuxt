@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import PageHero from "~/components/common/PageHero.vue";
 import SectionHeader from "~/components/common/SectionHeader.vue";
+import StatsCard from "~/components/common/StatsCard.vue";
 import CtaBanner from "~/components/common/CtaBanner.vue";
 import { companyBusinessScope, corporateValues, companyStats } from "~/data/company";
 
@@ -28,11 +29,11 @@ useSeoMeta({
       </template>
     </PageHero>
 
-    <!-- 企业定位与关键数据 -->
-    <section class="py-20 lg:py-24 bg-light">
+    <!-- 企业定位与业务理念 -->
+    <section class="py-20 lg:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <!-- 定位描述 -->
+          <!-- 左侧：定位描述 -->
           <div class="space-y-6">
             <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">企业定位</span>
             <h2 class="text-3xl sm:text-4xl font-bold text-dark tracking-tight leading-tight">
@@ -42,22 +43,22 @@ useSeoMeta({
               公司业务覆盖核医学场所建设全生命周期需求，从选址、设计、施工到环评、验收、运维，为客户提供专业化、定制化、高合规的一揽子交付方案。
             </p>
             <div class="grid grid-cols-2 gap-4 pt-2">
-              <div class="bg-white rounded-2xl p-5 shadow-xs border border-gray-100">
+              <div class="bg-slate-50/80 rounded-2xl p-5 shadow-xs border border-slate-100 hover:border-primary/30 hover:bg-white hover:shadow-md transition-all duration-300">
                 <i class="fa-solid fa-drafting-compass text-primary text-xl mb-3"></i>
                 <p class="text-sm font-bold text-dark">前期规划</p>
                 <p class="text-xs text-dark/40 mt-1">选址 · 方案 · 施工图</p>
               </div>
-              <div class="bg-white rounded-2xl p-5 shadow-xs border border-gray-100">
+              <div class="bg-slate-50/80 rounded-2xl p-5 shadow-xs border border-slate-100 hover:border-primary/30 hover:bg-white hover:shadow-md transition-all duration-300">
                 <i class="fa-solid fa-helmet-safety text-primary text-xl mb-3"></i>
                 <p class="text-sm font-bold text-dark">建设落地</p>
                 <p class="text-xs text-dark/40 mt-1">防护施工 · 净化工程</p>
               </div>
-              <div class="bg-white rounded-2xl p-5 shadow-xs border border-gray-100">
+              <div class="bg-slate-50/80 rounded-2xl p-5 shadow-xs border border-slate-100 hover:border-primary/30 hover:bg-white hover:shadow-md transition-all duration-300">
                 <i class="fa-solid fa-file-shield text-primary text-xl mb-3"></i>
                 <p class="text-sm font-bold text-dark">验收咨询</p>
                 <p class="text-xs text-dark/40 mt-1">环评 · 卫评 · 药监</p>
               </div>
-              <div class="bg-white rounded-2xl p-5 shadow-xs border border-gray-100">
+              <div class="bg-slate-50/80 rounded-2xl p-5 shadow-xs border border-slate-100 hover:border-primary/30 hover:bg-white hover:shadow-md transition-all duration-300">
                 <i class="fa-solid fa-headset text-primary text-xl mb-3"></i>
                 <p class="text-sm font-bold text-dark">后期运维</p>
                 <p class="text-xs text-dark/40 mt-1">检测 · 7×24 维护</p>
@@ -65,14 +66,47 @@ useSeoMeta({
             </div>
           </div>
 
-          <!-- 右侧：数据统计面板 -->
-          <div class="grid grid-cols-2 gap-6">
-            <div v-for="stat in companyStats" :key="stat.label"
-              class="bg-white rounded-3xl p-8 shadow-xs text-center border border-gray-100">
-              <span class="block text-4xl lg:text-5xl font-bold text-primary">{{ stat.number }}</span>
-              <span class="text-xs text-dark/60 tracking-wide mt-2 block font-medium">{{ stat.label }}</span>
+          <!-- 右侧：工程建设实景大图 -->
+          <div class="relative group">
+            <div
+              class="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 bg-slate-100 aspect-4/3 flex items-center justify-center border border-slate-200/80">
+              <img :src="withBase('/images/hero_petct_suite.jpg')" alt="贝瑞医疗 - 核医学工程高标准建设实景"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-linear-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
+
+              <!-- 右上角品质标签 -->
+              <div
+                class="absolute top-4 right-4 bg-slate-900/70 backdrop-blur-md text-white text-[11px] font-medium px-3.5 py-1.5 rounded-full flex items-center gap-1.5 border border-white/15">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                高标准规范交付
+              </div>
+            </div>
+
+            <!-- 浮动成就卡片 -->
+            <div
+              class="absolute -bottom-5 -left-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-slate-100 hidden sm:flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-lg">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div class="leading-tight">
+                <span class="block text-xs font-bold text-slate-900">高品质交钥匙工程</span>
+                <span class="block text-[10px] text-slate-400">环评 / 卫评 / 药监 100% 验收通过率</span>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 独立数据统计通栏区块 -->
+    <section class="py-16 lg:py-20 bg-slate-50/70 border-y border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StatsCard v-for="stat in companyStats" :key="stat.label"
+            :icon="stat.icon"
+            :number="stat.number"
+            :label="stat.label"
+            :desc="stat.desc" />
         </div>
       </div>
     </section>

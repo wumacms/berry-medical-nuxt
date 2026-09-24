@@ -17,21 +17,25 @@ const contactCards = [
     icon: "fa-solid fa-phone",
     title: "联系电话",
     lines: [companyContact.phone, companyContact.phoneSecondary],
+    href: `tel:${companyContact.phone}`,
   },
   {
     icon: "fa-regular fa-envelope",
     title: "电子邮箱",
     lines: [companyContact.email],
+    href: `mailto:${companyContact.email}`,
   },
   {
     icon: "fa-solid fa-location-dot",
     title: "公司地址",
     lines: [companyContact.address],
+    href: undefined,
   },
   {
     icon: "fa-solid fa-globe",
     title: "官方网站",
     lines: [companyContact.website],
+    href: companyContact.website.startsWith("http") ? companyContact.website : `https://${companyContact.website}`,
   },
 ];
 
@@ -73,78 +77,85 @@ const faqs: FaqItem[] = [
       </template>
     </PageHero>
 
-    <!-- 联系方式总览 -->
-    <section id="info" class="py-16 lg:py-20 bg-light scroll-mt-24">
+    <!-- 在线咨询与联系方式 -->
+    <section id="consult" class="py-20 lg:py-28 bg-white scroll-mt-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="card in contactCards" :key="card.title"
-            class="bg-white rounded-3xl p-8 text-center shadow-xs border border-gray-100 hover:shadow-xl transition-all duration-300">
-            <div
-              class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-6">
-              <i :class="card.icon"></i>
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <!-- 左侧：联系方式与流程引导 -->
+          <div class="lg:col-span-6 space-y-8">
+            <div class="space-y-3">
+              <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">联系与咨询</span>
+              <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+                提交您的建设需求<br>或随时与我们取得联系
+              </h2>
+              <p class="text-slate-500 leading-relaxed text-sm">
+                无论您是新建核医学科室、既有场所合规改造，还是咨询放射防护工程，我们的资深工程专家均将在 24 小时内为您提供技术建议与方案支持。
+              </p>
             </div>
-            <h3 class="text-lg font-bold text-dark mb-2">
-              {{ card.title }}
-            </h3>
-            <p v-for="(line, idx) in card.lines" :key="idx" class="text-sm text-dark/70 leading-relaxed">
-              {{ line }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 在线咨询表单与流程 -->
-    <section class="py-20 lg:py-28 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <!-- 左侧：表单流程说明 -->
-          <div class="space-y-6">
-            <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">在线咨询</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-dark tracking-tight leading-tight">
-              提交您的需求<br>获取专属解决方案
-            </h2>
-            <p class="text-dark/60 leading-relaxed">
-              请填写在线表单，我们的专业顾问将在 24 小时内与您联系，为您提供核医学场所建设前期规划与方案建议。
-            </p>
-
-            <!-- 服务流程步骤 -->
-            <div class="space-y-4 pt-4">
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
-                  1
-                </div>
+            <!-- 联系方式卡片矩阵 (2x2) -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div v-for="card in contactCards" :key="card.title"
+                class="bg-slate-50/80 rounded-2xl p-5 border border-slate-100 hover:border-primary/30 hover:bg-white hover:shadow-md transition-all duration-300 group flex flex-col justify-between">
                 <div>
-                  <p class="text-sm font-semibold text-dark">提交建设需求</p>
-                  <p class="text-xs text-dark/40">填写基本信息与项目拟建类型</p>
+                  <div
+                    class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-lg mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <i :class="card.icon"></i>
+                  </div>
+                  <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">
+                    {{ card.title }}
+                  </h3>
+                  <div class="space-y-1">
+                    <template v-if="card.href">
+                      <a :href="card.href" :target="card.href.startsWith('http') ? '_blank' : undefined"
+                        class="text-sm font-semibold text-slate-800 hover:text-primary transition-colors block leading-relaxed break-all">
+                        <p v-for="(line, idx) in card.lines" :key="idx">{{ line }}</p>
+                      </a>
+                    </template>
+                    <template v-else>
+                      <p v-for="(line, idx) in card.lines" :key="idx"
+                        class="text-sm font-semibold text-slate-800 leading-relaxed">
+                        {{ line }}
+                      </p>
+                    </template>
+                  </div>
                 </div>
               </div>
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
-                  2
+            </div>
+
+            <!-- 服务流程步骤条 -->
+            <div class="bg-slate-50/80 rounded-2xl p-5 border border-slate-100">
+              <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-3">服务响应流程</span>
+              <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="space-y-1">
+                  <div
+                    class="w-7 h-7 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center mx-auto">
+                    1</div>
+                  <p class="text-xs font-bold text-slate-800">提交建设需求</p>
+                  <p class="text-[10px] text-slate-400">在线表单/直接致电</p>
                 </div>
-                <div>
-                  <p class="text-sm font-semibold text-dark">顾问1对1对接</p>
-                  <p class="text-xs text-dark/40">资深工程设计专家沟通技术要点</p>
+                <div class="space-y-1">
+                  <div
+                    class="w-7 h-7 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center mx-auto">
+                    2</div>
+                  <p class="text-xs font-bold text-slate-800">顾问1对1对接</p>
+                  <p class="text-[10px] text-slate-400">资深专家技术沟通</p>
                 </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
-                  3
-                </div>
-                <div>
-                  <p class="text-sm font-semibold text-dark">定制专属方案</p>
-                  <p class="text-xs text-dark/40">出具初步规划布局与造价估算建议</p>
+                <div class="space-y-1">
+                  <div
+                    class="w-7 h-7 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center mx-auto shadow-xs">
+                    3</div>
+                  <p class="text-xs font-bold text-slate-800">定制专属方案</p>
+                  <p class="text-[10px] text-slate-400">概念规划与造价建议</p>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- 右侧：交互式表单 -->
-          <ContactForm />
+          <div class="lg:col-span-6">
+            <ContactForm />
+          </div>
         </div>
       </div>
     </section>
