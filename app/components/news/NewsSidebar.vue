@@ -27,16 +27,11 @@ const searchQuery = ref("");
         <i class="fa-solid fa-magnifying-glass text-primary text-xs"></i> 搜索新闻
       </h4>
       <div class="relative">
-        <input
-          v-model="searchQuery"
-          type="text"
-          placeholder="输入关键词…"
-          class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 pr-11 text-sm text-dark placeholder:text-dark/30 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition"
-        >
+        <input v-model="searchQuery" type="text" placeholder="输入关键词…"
+          class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 pr-11 text-sm text-dark placeholder:text-dark/30 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition">
         <button
           class="absolute right-3 top-1/2 -translate-y-1/2 text-dark/40 hover:text-primary transition cursor-pointer"
-          aria-label="搜索"
-        >
+          aria-label="搜索">
           <i class="fa-solid fa-arrow-right text-sm"></i>
         </button>
       </div>
@@ -50,10 +45,8 @@ const searchQuery = ref("");
       <ul class="space-y-4">
         <li v-for="(article, idx) in hotArticles" :key="article.id">
           <NuxtLink :to="`/news/${article.id}`" class="group flex items-start gap-3">
-            <span
-              class="w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 transition"
-              :class="idx === 0 ? 'bg-primary text-white' : 'bg-primary/10 text-primary'"
-            >
+            <span class="w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 transition"
+              :class="idx === 0 ? 'bg-primary text-white' : 'bg-primary/10 text-primary'">
               {{ idx + 1 }}
             </span>
             <div>
@@ -75,11 +68,8 @@ const searchQuery = ref("");
         <i class="fa-solid fa-tags text-primary text-xs"></i> 热门标签
       </h4>
       <div class="flex flex-wrap gap-2">
-        <span
-          v-for="tag in popularTags"
-          :key="tag"
-          class="bg-white text-dark/60 text-xs px-3 py-1.5 rounded-full border border-gray-200 hover:border-primary/40 hover:text-primary transition cursor-pointer"
-        >
+        <span v-for="tag in popularTags" :key="tag"
+          class="bg-white text-dark/60 text-xs px-3 py-1.5 rounded-full border border-gray-200 hover:border-primary/40 hover:text-primary transition cursor-pointer">
           {{ tag }}
         </span>
       </div>
@@ -92,10 +82,8 @@ const searchQuery = ref("");
       <p class="text-xs text-white/80 leading-relaxed mb-4">
         针对新建或改造核医学科提供专业方案指导。
       </p>
-      <NuxtLink
-        to="/contact"
-        class="bg-white text-primary text-xs font-semibold px-4 py-2.5 rounded-full inline-flex items-center gap-2 hover:bg-gray-50 transition"
-      >
+      <NuxtLink to="/contact"
+        class="bg-white text-primary text-xs font-semibold px-4 py-2.5 rounded-full inline-flex items-center gap-2 hover:bg-gray-50 transition">
         <i class="fa-regular fa-paper-plane"></i> 立即咨询
       </NuxtLink>
     </div>

@@ -30,10 +30,10 @@ const remainingNews = computed(() => {
 <template>
   <div>
     <!-- 首屏 Hero（背景图沉浸式） -->
-    <section class="relative overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop"
-        alt="新闻动态背景" class="absolute inset-0 w-full h-full object-cover" loading="eager">
-      <div class="absolute inset-0 bg-black/60 backdrop-blur-2xs"></div>
+    <section class="relative overflow-hidden bg-navy-dark">
+      <img src="/images/shielding_control_suite.jpg" alt="新闻动态背景"
+        class="absolute inset-0 w-full h-full object-cover opacity-35" loading="eager">
+      <div class="absolute inset-0 bg-linear-to-r from-navy-dark via-navy-dark/90 to-navy-dark/70"></div>
 
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div class="max-w-3xl">

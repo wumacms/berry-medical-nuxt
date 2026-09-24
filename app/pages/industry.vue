@@ -57,16 +57,15 @@ const therapeuticIsotopes = ["Lu-177", "Ac-225", "Y-90", "I-131"];
   <div>
     <!-- 首屏 Hero -->
     <PageHero tag="INDUSTRY BACKGROUND" tag-icon="fa-solid fa-chart-line" title="核医学迎来" highlight="精准医疗新时代"
-      description="全球健康挑战日益凸显，癌症与神经退行性疾病高发。核医学凭借在重大疾病诊疗中的独特优势，成为精准医疗领域的核心力量。"
-      image-url="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1470&auto=format&fit=crop"
-      image-alt="核医学影像设备">
+      description="全球健康挑战日益凸显，癌症与神经退行性疾病高发。核医学凭借在重大疾病诊疗中的独特优势，成为精准医疗领域的核心力量。" image-url="/images/hero_petct_suite.jpg"
+      image-alt="核医学高端影像与PET-CT设备">
       <template #actions>
         <a href="#challenges"
-          class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm">
+          class="bg-linear-to-r from-primary to-[#F28C38] text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 text-sm">
           了解行业挑战 <i class="fa-solid fa-arrow-down text-xs"></i>
         </a>
         <NuxtLink to="/contact"
-          class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm">
+          class="bg-white text-slate-700 font-semibold px-7 py-3.5 rounded-full border border-slate-200 hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all duration-200 flex items-center gap-2 text-sm">
           <i class="fa-regular fa-circle-question text-primary"></i> 咨询解决方案
         </NuxtLink>
       </template>

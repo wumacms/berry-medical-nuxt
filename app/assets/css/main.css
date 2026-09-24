@@ -3,8 +3,14 @@
 
 @theme {
   --color-primary: #E37722;
-  --color-dark: #3F3B3A;
-  --color-light: #F6F7F7;
+  --color-primary-hover: #D06514;
+  --color-dark: #2A2827;
+  --color-light: #F8F9FA;
+  --color-navy: #0B192C;
+  --color-navy-dark: #060D17;
+  --color-navy-light: #16243A;
+  --color-tech-blue: #0284C7;
+  --color-tech-cyan: #0EA5E9;
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 

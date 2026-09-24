@@ -29,20 +29,19 @@ const layoutPrinciples = [
   <div>
     <!-- 首屏 Hero -->
     <PageHero tag="SERVICE CONTENT" tag-icon="fa-solid fa-layer-group" title="核医学场所建设" highlight="整体解决方案"
-      description="从设计到施工，从设备到运维，贝瑞医疗提供核医学场所建设一站式服务，覆盖全生命周期需求。"
-      image-url="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1470&auto=format&fit=crop"
-      image-alt="核医学场所建设服务">
+      description="从设计到施工，从设备到运维，贝瑞医疗提供核医学场所建设一站式服务，覆盖全生命周期需求。" image-url="/images/hero_petct_suite.jpg"
+      image-alt="核医学场所建设服务 - 一体化专业套间">
       <template #actions>
         <a href="#design"
-          class="bg-primary text-white font-semibold px-5 py-2.5 rounded-full shadow-md shadow-primary/20 hover:bg-primary/90 transition text-sm flex items-center gap-2">
+          class="bg-linear-to-r from-primary to-[#F28C38] text-white font-semibold px-5 py-2.5 rounded-full shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all text-sm flex items-center gap-2">
           <i class="fa-solid fa-drafting-compass text-xs"></i> 设计篇
         </a>
         <a href="#construction"
-          class="bg-white text-dark font-semibold px-5 py-2.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition text-sm flex items-center gap-2">
+          class="bg-white text-slate-700 font-semibold px-5 py-2.5 rounded-full border border-slate-200 hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all text-sm flex items-center gap-2">
           <i class="fa-solid fa-helmet-safety text-xs"></i> 施工篇
         </a>
         <a href="#equipment"
-          class="bg-white text-dark font-semibold px-5 py-2.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition text-sm flex items-center gap-2">
+          class="bg-white text-slate-700 font-semibold px-5 py-2.5 rounded-full border border-slate-200 hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all text-sm flex items-center gap-2">
           <i class="fa-solid fa-microchip text-xs"></i> 设备篇
         </a>
       </template>

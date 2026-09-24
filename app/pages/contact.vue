@@ -59,16 +59,15 @@ const faqs: FaqItem[] = [
   <div>
     <!-- 首屏 Hero -->
     <PageHero tag="CONTACT US" tag-icon="fa-solid fa-headset" title="期待与您" highlight="携手“核”作"
-      description="贝瑞医疗期待与您携手“核”作，共筑医疗健康新蓝图！欢迎通过以下方式联系我们，获取专属核医学场所建设方案。"
-      image-url="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1470&auto=format&fit=crop"
-      image-alt="贝瑞医疗环境">
+      description="贝瑞医疗期待与您携手“核”作，共筑医疗健康新蓝图！欢迎通过以下方式联系我们，获取专属核医学场所建设方案。" image-url="/images/shielding_control_suite.jpg"
+      image-alt="贝瑞医疗工程控制中心与客户咨询">
       <template #actions>
         <a :href="`tel:${companyContact.phone}`"
-          class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm">
+          class="bg-linear-to-r from-primary to-[#F28C38] text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 text-sm">
           <i class="fa-solid fa-phone"></i> {{ companyContact.phone }}
         </a>
         <a :href="`mailto:${companyContact.email}`"
-          class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm">
+          class="bg-white text-slate-700 font-semibold px-7 py-3.5 rounded-full border border-slate-200 hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all duration-200 flex items-center gap-2 text-sm">
           <i class="fa-regular fa-envelope text-primary"></i> 发送邮件
         </a>
       </template>

@@ -30,46 +30,67 @@ const latestNews = computed(() => newsList.slice(0, 3));
 <template>
   <div>
     <!-- ========= 首屏区块 Hero Section ========= -->
-    <section class="bg-linear-to-br from-white via-light to-white overflow-hidden border-b border-gray-100/50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <section
+      class="relative bg-linear-to-b from-slate-50/80 via-white to-slate-50/50 overflow-hidden border-b border-slate-100">
+      <!-- 科技光晕背景装饰 -->
+      <div
+        class="absolute -top-24 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div
+        class="absolute -bottom-24 left-10 w-[450px] h-[450px] bg-tech-cyan/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <!-- 左侧文字 -->
           <div class="space-y-7">
             <div
-              class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-4 py-1.5 rounded-full tracking-wide">
-              <i class="fa-solid fa-circle-check text-[10px]"></i> 核医学场所建设一站式服务
+              class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-4 py-1.5 rounded-full tracking-wide border border-primary/15">
+              <i class="fa-solid fa-shield-halved text-[10px]"></i> 核医学场所建设一站式服务
             </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark leading-[1.15] tracking-tight">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
               专注核医学<br>
-              <span class="text-primary">场所建设</span>一站式服务
+              <span class="bg-linear-to-r from-primary to-[#F28C38] bg-clip-text text-transparent">场所建设</span>一站式服务
             </h1>
-            <p class="text-base text-dark/60 leading-relaxed max-w-lg">
+            <p class="text-base text-slate-600 leading-relaxed max-w-lg font-normal">
               从选址规划、设计施工到环评验收、设备供应及7×24小时运维，贝瑞医疗为您提供核医学场所建设全生命周期闭环解决方案。
             </p>
             <div class="flex flex-wrap items-center gap-4 pt-2">
               <NuxtLink to="/contact"
-                class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm">
+                class="bg-linear-to-r from-primary to-[#F28C38] text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 text-sm">
                 咨询合作方案 <i class="fa-solid fa-arrow-right text-xs"></i>
               </NuxtLink>
               <NuxtLink to="/services"
-                class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm">
+                class="bg-white text-slate-700 font-semibold px-7 py-3.5 rounded-full border border-slate-200 hover:border-primary/40 hover:text-primary hover:shadow-md transition-all duration-200 flex items-center gap-2 text-sm">
                 <i class="fa-solid fa-layer-group text-primary"></i> 了解业务范围
               </NuxtLink>
             </div>
           </div>
 
-          <!-- 右侧主视觉 -->
-          <div
-            class="rounded-3xl overflow-hidden shadow-2xl shadow-dark/10 bg-light aspect-4/3 flex items-center justify-center border border-gray-100">
-            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1470&auto=format&fit=crop"
-              alt="核医学场所建设" class="w-full h-full object-cover hover:scale-102 transition duration-700" loading="eager">
+          <!-- 右侧主视觉 (真实专业高精PET-CT套间) -->
+          <div class="relative group">
+            <div
+              class="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 bg-slate-100 aspect-4/3 flex items-center justify-center border border-slate-200/80">
+              <img src="/images/hero_petct_suite.jpg" alt="核医学场所建设 - PET-CT一体化机房"
+                class="w-full h-full object-cover group-hover:scale-103 transition duration-700" loading="eager">
+            </div>
+
+            <!-- 浮动科技标签卡片 -->
+            <div
+              class="absolute -bottom-5 -left-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-slate-100 hidden sm:flex items-center gap-3 animate-fade-in">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-lg">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div class="leading-tight">
+                <span class="block text-xs font-bold text-slate-900">国家级标准参编单位</span>
+                <span class="block text-[10px] text-slate-400">PET-CT / SPECT 规范机房</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========= 核心业绩数据 Stats Section ========= -->
-    <section class="py-16 lg:py-20 bg-light">
+    <section class="py-16 lg:py-20 bg-slate-50/70 border-b border-slate-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <StatsCard v-for="stat in caseStats" :key="stat.label" :icon="stat.icon" :number="stat.number"
@@ -86,34 +107,38 @@ const latestNews = computed(() => newsList.slice(0, 3));
         <div class="grid md:grid-cols-3 gap-6">
           <!-- 设计篇 -->
           <NuxtLink to="/services#design"
-            class="bg-light rounded-3xl p-8 hover:shadow-xl transition duration-300 border border-transparent hover:border-primary/20 group flex flex-col justify-between">
+            class="relative bg-slate-50/80 rounded-3xl p-8 hover:bg-white hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300 border border-slate-100 hover:border-tech-cyan/40 group flex flex-col justify-between overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-tech-cyan/5 rounded-bl-full pointer-events-none group-hover:scale-125 transition-transform duration-500" />
             <div>
               <div
-                class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
+                class="w-16 h-16 rounded-2xl bg-tech-cyan/10 text-tech-cyan flex items-center justify-center text-3xl mb-6 group-hover:bg-tech-cyan group-hover:text-white transition duration-300 shadow-xs">
                 <i class="fa-solid fa-drafting-compass"></i>
               </div>
-              <span class="text-xs font-bold text-primary tracking-wider">01 DESIGN</span>
-              <h3 class="text-2xl font-bold text-dark mt-2 mb-3">设计篇</h3>
-              <p class="text-sm text-dark/50 leading-relaxed mb-6">
+              <span class="text-xs font-bold text-tech-cyan tracking-wider">01 DESIGN</span>
+              <h3 class="text-2xl font-bold text-slate-900 mt-2 mb-3">设计篇</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mb-6 font-normal">
                 选址、方案及专项施工图设计，融合功能优化、成本控制与美学设计。
               </p>
             </div>
-            <span class="text-primary text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+            <span class="text-tech-cyan text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
               了解详情 <i class="fa-solid fa-arrow-right text-xs"></i>
             </span>
           </NuxtLink>
 
           <!-- 施工篇 -->
           <NuxtLink to="/services#construction"
-            class="bg-light rounded-3xl p-8 hover:shadow-xl transition duration-300 border border-transparent hover:border-primary/20 group flex flex-col justify-between">
+            class="relative bg-slate-50/80 rounded-3xl p-8 hover:bg-white hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 border border-slate-100 hover:border-primary/40 group flex flex-col justify-between overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full pointer-events-none group-hover:scale-125 transition-transform duration-500" />
             <div>
               <div
-                class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
+                class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300 shadow-xs">
                 <i class="fa-solid fa-helmet-safety"></i>
               </div>
               <span class="text-xs font-bold text-primary tracking-wider">02 CONSTRUCTION</span>
-              <h3 class="text-2xl font-bold text-dark mt-2 mb-3">施工篇</h3>
-              <p class="text-sm text-dark/50 leading-relaxed mb-6">
+              <h3 class="text-2xl font-bold text-slate-900 mt-2 mb-3">施工篇</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mb-6 font-normal">
                 辐射防护施工、放射性废水处理系统，满足环保、卫生及药监验收要求。
               </p>
             </div>
@@ -124,19 +149,21 @@ const latestNews = computed(() => newsList.slice(0, 3));
 
           <!-- 设备篇 -->
           <NuxtLink to="/services#equipment"
-            class="bg-light rounded-3xl p-8 hover:shadow-xl transition duration-300 border border-transparent hover:border-primary/20 group flex flex-col justify-between">
+            class="relative bg-slate-50/80 rounded-3xl p-8 hover:bg-white hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300 border border-slate-100 hover:border-navy/30 group flex flex-col justify-between overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-bl-full pointer-events-none group-hover:scale-125 transition-transform duration-500" />
             <div>
               <div
-                class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
+                class="w-16 h-16 rounded-2xl bg-navy/10 text-navy flex items-center justify-center text-3xl mb-6 group-hover:bg-navy group-hover:text-white transition duration-300 shadow-xs">
                 <i class="fa-solid fa-microchip"></i>
               </div>
-              <span class="text-xs font-bold text-primary tracking-wider">03 EQUIPMENT</span>
-              <h3 class="text-2xl font-bold text-dark mt-2 mb-3">设备篇</h3>
-              <p class="text-sm text-dark/50 leading-relaxed mb-6">
+              <span class="text-xs font-bold text-navy tracking-wider">03 EQUIPMENT</span>
+              <h3 class="text-2xl font-bold text-slate-900 mt-2 mb-3">设备篇</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mb-6 font-normal">
                 活度测量、防护手套箱、合成热室、个人剂量仪等专业设备供应。
               </p>
             </div>
-            <span class="text-primary text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+            <span class="text-navy text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
               了解详情 <i class="fa-solid fa-arrow-right text-xs"></i>
             </span>
           </NuxtLink>

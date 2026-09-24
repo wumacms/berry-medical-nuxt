@@ -38,16 +38,15 @@ const filteredCases = computed(() => {
   <div>
     <!-- 首屏 Hero -->
     <PageHero tag="PERFORMANCE INTRODUCTION" tag-icon="fa-solid fa-briefcase" title="30+项目实绩" highlight="见证专业实力"
-      description="贝瑞医疗已为全国30余家医疗机构提供核医学场所建设实施服务，覆盖三甲医院、肿瘤专科医院及科研机构。"
-      image-url="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1470&auto=format&fit=crop"
-      image-alt="核医学场所建设实景">
+      description="贝瑞医疗已为全国30余家医疗机构提供核医学场所建设实施服务，覆盖三甲医院、肿瘤专科医院及科研机构。" image-url="/images/hero_petct_suite.jpg"
+      image-alt="核医学场所建设实景 - 贝瑞医疗实绩">
       <template #actions>
         <a href="#cases"
-          class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm">
+          class="bg-linear-to-r from-primary to-[#F28C38] text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 text-sm">
           查看典型案例 <i class="fa-solid fa-arrow-down text-xs"></i>
         </a>
         <NuxtLink to="/contact"
-          class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm">
+          class="bg-white text-slate-700 font-semibold px-7 py-3.5 rounded-full border border-slate-200 hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all duration-200 flex items-center gap-2 text-sm">
           <i class="fa-regular fa-circle-question text-primary"></i> 咨询合作
         </NuxtLink>
       </template>

@@ -13,18 +13,12 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <!-- 置顶/精选大卡片模式 -->
-  <article
-    v-if="featured"
-    class="group rounded-3xl overflow-hidden bg-light shadow-xs hover:shadow-xl transition-all duration-300 border border-gray-100"
-  >
+  <article v-if="featured"
+    class="group rounded-3xl overflow-hidden bg-light shadow-xs hover:shadow-xl transition-all duration-300 border border-gray-100">
     <div class="grid md:grid-cols-2">
       <div class="aspect-4/3 md:aspect-auto md:h-full overflow-hidden">
-        <img
-          :src="item.imageUrl"
-          :alt="item.title"
-          class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-          loading="lazy"
-        >
+        <img :src="item.imageUrl" :alt="item.title"
+          class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
       </div>
       <div class="p-6 sm:p-8 flex flex-col justify-center">
         <div class="flex items-center gap-3 mb-3">
@@ -44,10 +38,8 @@ withDefaults(defineProps<Props>(), {
           {{ item.summary }}
         </p>
         <div class="flex items-center gap-2 mt-5">
-          <NuxtLink
-            :to="`/news/${item.id}`"
-            class="text-primary text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all"
-          >
+          <NuxtLink :to="`/news/${item.id}`"
+            class="text-primary text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all">
             阅读全文 <i class="fa-solid fa-arrow-right text-xs"></i>
           </NuxtLink>
         </div>
@@ -56,17 +48,11 @@ withDefaults(defineProps<Props>(), {
   </article>
 
   <!-- 常规新闻卡片模式 -->
-  <article
-    v-else
-    class="group rounded-3xl overflow-hidden bg-light shadow-xs hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full"
-  >
+  <article v-else
+    class="group rounded-3xl overflow-hidden bg-light shadow-xs hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full">
     <div class="aspect-16/10 overflow-hidden">
-      <img
-        :src="item.imageUrl"
-        :alt="item.title"
-        class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-        loading="lazy"
-      >
+      <img :src="item.imageUrl" :alt="item.title"
+        class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
     </div>
     <div class="p-6 flex flex-col flex-1">
       <div class="flex items-center gap-3 mb-3">
@@ -85,10 +71,8 @@ withDefaults(defineProps<Props>(), {
       <p class="text-sm text-dark/50 leading-relaxed mt-2 line-clamp-2 flex-1">
         {{ item.summary }}
       </p>
-      <NuxtLink
-        :to="`/news/${item.id}`"
-        class="text-primary text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all mt-4"
-      >
+      <NuxtLink :to="`/news/${item.id}`"
+        class="text-primary text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all mt-4">
         阅读全文 <i class="fa-solid fa-arrow-right text-xs"></i>
       </NuxtLink>
     </div>

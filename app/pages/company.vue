@@ -15,15 +15,14 @@ useSeoMeta({
     <!-- 首屏 Hero -->
     <PageHero tag="COMPANY PROFILE" tag-icon="fa-solid fa-building" title="专注核医学场所建设" highlight="全生命周期闭环服务"
       description="贝瑞医疗科技（郑州）有限公司专注核医学场所建设一站式服务，以专业技术与深厚行业经验，为客户提供从规划到运维的全生命周期交钥匙方案。"
-      image-url="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1470&auto=format&fit=crop"
-      image-alt="贝瑞医疗办公环境">
+      image-url="/images/shielding_control_suite.jpg" image-alt="贝瑞医疗工程技术与控制中心">
       <template #actions>
         <a href="#business"
-          class="bg-primary text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 hover:bg-primary/90 transition flex items-center gap-2 text-sm">
+          class="bg-linear-to-r from-primary to-[#F28C38] text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 text-sm">
           了解业务范围 <i class="fa-solid fa-arrow-down text-xs"></i>
         </a>
         <NuxtLink to="/contact"
-          class="bg-white text-dark font-semibold px-7 py-3.5 rounded-full border border-gray-200 hover:border-primary/30 hover:text-primary transition flex items-center gap-2 text-sm">
+          class="bg-white text-slate-700 font-semibold px-7 py-3.5 rounded-full border border-slate-200 hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all duration-200 flex items-center gap-2 text-sm">
           <i class="fa-regular fa-circle-question text-primary"></i> 咨询合作
         </NuxtLink>
       </template>

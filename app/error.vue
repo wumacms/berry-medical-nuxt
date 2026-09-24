@@ -23,8 +23,7 @@ const handleError = () => {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <NuxtLink to="/" class="flex items-center gap-2 group">
           <div
-            class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform"
-          >
+            class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
             <i class="fa-solid fa-radiation text-lg"></i>
           </div>
           <div class="leading-tight">
@@ -32,10 +31,8 @@ const handleError = () => {
             <span class="block text-[10px] text-gray-400 tracking-wider">BERRY MEDICAL</span>
           </div>
         </NuxtLink>
-        <NuxtLink
-          to="/"
-          class="text-sm font-medium text-dark/70 hover:text-primary transition flex items-center gap-1.5"
-        >
+        <NuxtLink to="/"
+          class="text-sm font-medium text-dark/70 hover:text-primary transition flex items-center gap-1.5">
           <i class="fa-solid fa-house text-xs"></i> 官网首页
         </NuxtLink>
       </div>
@@ -50,7 +47,8 @@ const handleError = () => {
             {{ error.statusCode || 404 }}
           </div>
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-3xl shadow-inner">
+            <div
+              class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-3xl shadow-inner">
               <i class="fa-solid fa-triangle-exclamation"></i>
             </div>
           </div>
@@ -65,22 +63,16 @@ const handleError = () => {
 
         <!-- 操作按钮 -->
         <div class="flex flex-wrap items-center justify-center gap-4">
-          <button
-            @click="handleError"
-            class="inline-flex items-center gap-2 bg-primary text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-primary/90 transition shadow-lg shadow-primary/20 cursor-pointer"
-          >
+          <button @click="handleError"
+            class="inline-flex items-center gap-2 bg-primary text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-primary/90 transition shadow-lg shadow-primary/20 cursor-pointer">
             <i class="fa-solid fa-house text-xs"></i> 返回官网首页
           </button>
-          <NuxtLink
-            to="/services"
-            class="inline-flex items-center gap-2 bg-light text-dark font-semibold text-sm px-6 py-3 rounded-full hover:bg-gray-200 transition border border-gray-200"
-          >
+          <NuxtLink to="/services"
+            class="inline-flex items-center gap-2 bg-light text-dark font-semibold text-sm px-6 py-3 rounded-full hover:bg-gray-200 transition border border-gray-200">
             <i class="fa-solid fa-layer-group text-xs text-primary"></i> 了解服务内容
           </NuxtLink>
-          <NuxtLink
-            to="/contact"
-            class="inline-flex items-center gap-2 bg-light text-dark font-semibold text-sm px-6 py-3 rounded-full hover:bg-gray-200 transition border border-gray-200"
-          >
+          <NuxtLink to="/contact"
+            class="inline-flex items-center gap-2 bg-light text-dark font-semibold text-sm px-6 py-3 rounded-full hover:bg-gray-200 transition border border-gray-200">
             <i class="fa-solid fa-phone text-xs text-primary"></i> 联系技术顾问
           </NuxtLink>
         </div>
