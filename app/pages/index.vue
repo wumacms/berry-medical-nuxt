@@ -69,7 +69,7 @@ const latestNews = computed(() => newsList.slice(0, 3));
           <div class="relative group">
             <div
               class="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 bg-slate-100 aspect-4/3 flex items-center justify-center border border-slate-200/80">
-              <img src="/images/hero_petct_suite.jpg" alt="核医学场所建设 - PET-CT一体化机房"
+              <img :src="withBase('/images/hero_petct_suite.jpg')" alt="核医学场所建设 - PET-CT一体化机房"
                 class="w-full h-full object-cover group-hover:scale-103 transition duration-700" loading="eager">
             </div>
 

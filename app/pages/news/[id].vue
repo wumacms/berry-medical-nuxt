@@ -35,7 +35,7 @@ useSeoMeta({
   <div>
     <!-- 首屏 / 文章标题区块 -->
     <section class="relative overflow-hidden bg-dark text-white">
-      <img :src="currentArticle.imageUrl" alt="背景图" class="absolute inset-0 w-full h-full object-cover opacity-50">
+      <img :src="withBase(currentArticle.imageUrl)" alt="背景图" class="absolute inset-0 w-full h-full object-cover opacity-50">
       <div class="absolute inset-0 bg-black/30"></div>
 
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">

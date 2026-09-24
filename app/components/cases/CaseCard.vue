@@ -12,7 +12,7 @@ defineProps<Props>();
   <div
     class="group rounded-3xl overflow-hidden bg-light shadow-xs hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col h-full">
     <div class="aspect-4/3 overflow-hidden relative">
-      <img :src="item.imageUrl" :alt="item.title"
+      <img :src="withBase(item.imageUrl)" :alt="item.title"
         class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700" loading="lazy">
       <span class="absolute top-4 left-4 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
         {{ item.categoryLabel }}

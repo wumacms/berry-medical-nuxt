@@ -50,7 +50,7 @@ withDefaults(defineProps<Props>(), {
         <!-- 右侧主视觉 -->
         <div v-if="imageUrl"
           class="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 bg-slate-100 aspect-4/3 flex items-center justify-center border border-slate-200/80 group">
-          <img :src="imageUrl" :alt="imageAlt"
+          <img :src="withBase(imageUrl)" :alt="imageAlt"
             class="w-full h-full object-cover group-hover:scale-103 transition duration-700" loading="eager">
         </div>
       </div>

@@ -31,7 +31,7 @@ const remainingNews = computed(() => {
   <div>
     <!-- 首屏 Hero（背景图沉浸式） -->
     <section class="relative overflow-hidden bg-navy-dark">
-      <img src="/images/shielding_control_suite.jpg" alt="新闻动态背景"
+      <img :src="withBase('/images/shielding_control_suite.jpg')" alt="新闻动态背景"
         class="absolute inset-0 w-full h-full object-cover opacity-35" loading="eager">
       <div class="absolute inset-0 bg-linear-to-r from-navy-dark via-navy-dark/90 to-navy-dark/70"></div>
 

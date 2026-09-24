@@ -121,7 +121,7 @@ useSeoMeta({
           <div class="relative group">
             <div
               class="rounded-3xl overflow-hidden shadow-2xl shadow-tech-cyan/10 bg-slate-950 aspect-16/10 relative border border-slate-700/80 group-hover:border-tech-cyan/40 transition duration-500">
-              <img src="/images/digital_twin_system.jpg" alt="瑞核V1.0数字孪生全景空间模型"
+              <img :src="withBase('/images/digital_twin_system.jpg')" alt="瑞核V1.0数字孪生全景空间模型"
                 class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 opacity-95">
               <div
                 class="absolute inset-0 bg-linear-to-t from-navy-dark/95 via-navy-dark/20 to-transparent flex items-end p-8">
